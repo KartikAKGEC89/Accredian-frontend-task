@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Slider from './components/Slider'
 import Refer from './components/Refer'
 import Howrefer from './components/Howrefer'
+import Benifits from './components/Benifits'
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Slider />
       <Refer />
       <Howrefer />
+      <Benifits />
     </div>
   )
 }
