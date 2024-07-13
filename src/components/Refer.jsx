@@ -1,9 +1,13 @@
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Button, Typography, useMediaQuery } from '@mui/material';
 import React from 'react';
 import Display from '../images/Anniversary.png';
 import Cash from '../images/cash.png';
+import Cash3 from '../images/cash3.png';
+import Cash2 from '../images/cash2.png';
+import Cash4 from '../images/cash4.png';
 
 const Refer = () => {
+  const isSmallScreen = useMediaQuery('(max-width: 1150px)');
   return (
     <Box
       sx={{
@@ -27,11 +31,17 @@ const Refer = () => {
           top: '80%',
         },
         '@media (max-width: 700px)': {
+          top: '100%',
           flexDirection: "column"
         },
       }}>
       <div>
-        <img src={Cash} alt='cash' />
+        <Box
+        component="img"
+        src={Cash}
+        alt="Cash"
+        sx={{width: isSmallScreen ? '80px' : 'auto', }}
+      />
         <div style={{ padding: "30px" }}>
           <Typography
             sx={{
@@ -85,7 +95,44 @@ const Refer = () => {
           </Button>
         </div>
       </div>
-      <img src={Display} alt='Display money' style={{ maxWidth: '50%', marginBottom: "0" }} />
+       <Box position="relative" display="inline-block">
+      <Box
+        component="img"
+        src={Cash3}
+        alt="Cash3"
+        sx={{ marginLeft: '75%', maxWidth: '95%',width: isSmallScreen ? '80px' : 'auto', }}
+      />
+      <Box
+        component="img"
+        src={Display}
+        alt="Display money"
+        sx={{ maxWidth: '95%', marginBottom: 0 }}
+      />
+      <Box
+        component="img"
+        src={Cash2}
+        alt="cash"
+        sx={{
+          position: 'absolute',
+          top: '40%',
+          left: '80%',
+          maxWidth: '80%',
+          width: isSmallScreen ? '80px' : 'auto',
+        }}
+      />
+      <Box
+        component="img"
+        src={Cash4}
+        alt="cash"
+        sx={{
+          position: 'absolute',
+          top: '72%',
+          left: '2%',
+          maxWidth: '80%',
+          width: isSmallScreen ? '80px' : 'auto',
+        }}
+      />
+    </Box>
     </Box>
   )
 }
