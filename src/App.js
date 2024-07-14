@@ -5,6 +5,7 @@ import Slider from './components/Slider'
 import Refer from './components/Refer'
 import Howrefer from './components/Howrefer'
 import Benifits from './components/Benifits'
+import Faq from './components/Faq'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <Refer />
       <Howrefer />
       <Benifits />
+      <Faq />
     </div>
   )
 }
