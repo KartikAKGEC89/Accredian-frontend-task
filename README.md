@@ -13,7 +13,7 @@ This repository contains the frontend code for the Refer Page of our project. Th
 
 - **React**: A JavaScript library for building user interfaces.
 - **CSS**: Styling the application.
-- **Axios**: For making HTTP requests to the backend.
+- **Fetch**: For making HTTP requests to the backend.
 - **React Router**: For navigation within the application.
 
 ## Video Demo
