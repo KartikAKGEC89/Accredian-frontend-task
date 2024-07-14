@@ -9,7 +9,9 @@ import { Button } from '@mui/material';
 const ReferralComponent = () => {
 
   return (
-    <div style={{marginTop:"100%"}}>
+    <div style={{
+      marginTop: "100%"
+    }}>
       <div className='benefits-container'>
         <p className='benefits-title'>What Are The <span className='highlight'>Referral Benefits?</span></p>
       </div>
@@ -80,17 +82,17 @@ const ReferralComponent = () => {
       <th className='table-header-cell' style={{
         color:"rgba(19, 80, 160, 1)",
         fontWeight:"bold",
-        fontSize:"25px"
+        fontSize:"20px"
       }}><p className='table-header-title'>Programs</p></th>
       <th className='table-header-cell' style={{
         color:"rgba(19, 80, 160, 1)",
         fontWeight:"bold",
-        fontSize:"25px"
+        fontSize:"20px"
       }}>Referrer Bonus</th>
       <th className='table-header-cell' style={{
         color:"rgba(19, 80, 160, 1)",
         fontWeight:"bold",
-        fontSize:"25px"
+        fontSize:"20px"
       }}>Referee Bonus</th>
     </tr>
   </thead>
@@ -168,8 +170,8 @@ const ReferralComponent = () => {
             backgroundColor: 'white',
             color: "rgba(26, 115, 232, 1)",
           },
-            '@media (max-width: 425px)': {
-            marginTop: "30%", 
+            '@media (max-width: 700px)': {
+            display:"none" 
           },
         }}
       >
@@ -188,8 +190,8 @@ const ReferralComponent = () => {
             backgroundColor: 'white',
             color: "rgba(26, 115, 232, 1)",
           },
-            '@media (max-width: 425px)': {
-            marginTop: "30%", 
+            '@media (max-width: 700px)': {
+            display:"none" 
           },
         }}
       >
