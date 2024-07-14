@@ -41,8 +41,14 @@ const Faq = () => {
       },
     ],
     "Terms & Conditions": [
-      // Add FAQs for Terms & Conditions
+      
     ],
+  };
+
+   const [expandedIndex, setExpandedIndex] = useState(-1); 
+
+  const handleAccordionChange = (index) => {
+    setExpandedIndex(index === expandedIndex ? -1 : index); 
   };
 
   return (
@@ -59,7 +65,7 @@ const Faq = () => {
                 fullWidth
                 sx={{
                   color: activeCategory === category ? "#3385ff" : "rgba(115, 115, 115, 1)",
-                  border: "thin solid rgba(115, 115, 115, 0.5)",
+                  border: activeCategory === category ? "thin solid rgba(115, 115, 115, 0.5)" : "none",
                   textAlign: "left",
                   justifyContent: "center",
                   borderRadius: theme.shape.borderRadius / 2,
@@ -78,34 +84,47 @@ const Faq = () => {
             ))}
           </Grid>
           <Grid item xs={12} md={9}>
-            {faqs[activeCategory].map((faq, index) => (
-                <Accordion key={index} sx={{
-                  boxShadow: "none",
-                  "&:before": {
-                   display: "none",
-                }
-              }}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls={`panel${index}a-content`}
-                  id={`panel${index}a-header`}
-                        sx={{
-                      padding: 0,
-                  }}
-                >
-                    <Typography sx={{
-                      fontWeight: "bold",
-                      color: 'rgba(26, 115, 232, 1)',
-                  }}>{faq.question}</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography sx={{
-                    color:"rgba(0, 0, 0, 0.87)",
-                  }}>{faq.answer}</Typography>
-                </AccordionDetails>
-              </Accordion>
-            ))}
-          </Grid>
+      {faqs[activeCategory].map((faq, index) => (
+        <Accordion
+          key={index}
+          expanded={index === expandedIndex}
+          onChange={() => handleAccordionChange(index)}
+          sx={{
+            boxShadow: "none",
+            "&:before": {
+              display: "none",
+            }
+          }}
+        >
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls={`panel${index}a-content`}
+            id={`panel${index}a-header`}
+            sx={{
+              padding: 0,
+            }}
+          >
+            <Typography
+              sx={{
+                fontWeight: "bold",
+                color: index === expandedIndex ? 'rgba(26, 115, 232, 1)' : 'black',
+              }}
+            >
+              {faq.question}
+            </Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography
+              sx={{
+                color: "rgba(0, 0, 0, 0.87)",
+              }}
+            >
+              {faq.answer}
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+      ))}
+    </Grid>
         </Grid>
         <Box sx={{
         backgroundColor: '#3385ff',
@@ -115,6 +134,10 @@ const Faq = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
+        '@media (max-width: 500px)': {
+          flexDirection: "column",
+          padding:"10px"
+        },
         }}>
           <Box display="flex" alignItems="center">
             <HeadsetMicIcon sx={{
@@ -140,7 +163,11 @@ const Faq = () => {
           </Box>
           <Button sx={{
             backgroundColor:"rgba(255, 255, 255, 1)",
-            color:"rgba(59, 130, 246, 1)"
+            color: "rgba(59, 130, 246, 1)",
+            '&:hover': {
+              backgroundColor:"black",
+              color: "rgba(59, 130, 246, 1)",
+            }
           }}>
             Get in touch
           </Button>

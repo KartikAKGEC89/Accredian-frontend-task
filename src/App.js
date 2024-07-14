@@ -6,6 +6,7 @@ import Refer from './components/Refer'
 import Howrefer from './components/Howrefer'
 import Benifits from './components/Benifits'
 import Faq from './components/Faq'
+import Footer from './components/Footer'
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       <Howrefer />
       <Benifits />
       <Faq />
+      <Footer />
     </div>
   )
 }
